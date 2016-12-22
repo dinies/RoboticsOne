@@ -1,7 +1,7 @@
 %% DH transformation matrices and direct kinematics of a serial robot (SCARA example)
 %% 5 Nov 2012 (DH frames assigned as in lecture slides 09_DirectKinematics, A. De Luca)
 
-clear all
+clear
 clc
 
 %% Define symbolic variables
