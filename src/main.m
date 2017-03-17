@@ -6,6 +6,8 @@ clc
 format long
 
 
+%%   SYMBOLIC PROBLEM 
+
 
 %PARAMETERS
 
@@ -48,7 +50,7 @@ if L >(V_max^2/a_max)
             s(i) =  (V_max*t) - (V_max^2/(2*a_max))  ;   %0.5*a_max*T_s^2 + V_max*(t-T_s)
             t = t+dt;
 
-        elseif (t > (T_tot - T_s)) && (t < T_tot)
+        elseif (t > (T_tot - T_s)) && (t <= T_tot)
             s(i) = (((-1)*a_max*(t-T_tot)^2)/2) + V_max*T_tot - V_max^2/a_max ; %0.5*a_max*T_s^2 + V_max*(T_tot - T_s) + 0.5*a_max*(t-T_tot+T_s)^2
             t = t+dt;
         end
@@ -61,7 +63,7 @@ else
         if t <= T_tot/2
             s(i) = 0.5*a_max*t^2 ;
             t = t+dt;
-        elseif (t > T_tot/2) &&  (t <= T_tot)
+        elseif (t > T_tot/2) && (t <= T_tot)
             s(i) = 0.5*a_max*(T_max/2)^2 + 0.5*a_max*(t-T_tot/2)^2 ;
             t = t+dt;
         end
@@ -84,9 +86,9 @@ for S=1:(length(s))
     %   2 - (5144103864046787*13^(1/2))/58546795155816448
 
     %gradient_method
-    q_curr= fun_gradient_method(q0, q_sym, J_T_sym, p_s, p_sym, 0.5)
+    q_curr= fun_gradient_method(q0, q_sym, J_T_sym, p_s, p_sym, 0.5);
     %newton method
-    q_f(:,S) = fun_newton(q_curr, q_sym, J_sym, p_s, p_sym)
+    q_f(:,S) = fun_newton(q_curr, q_sym, J_sym, p_s, p_sym);
 end
 
 %Desired trajectory of E-E
