@@ -1,0 +1,10 @@
+*****I am distributing these source files for your benefit, but I must ask that you do NOT redistribute them. In particular, do not post them on ftp or web sites, and in any case do not change the header with the credits.*****
+
+---------------------------------
+
+Run s12_7.m to execute the program. The robot is actually a planar PPnR manipulator, i.e. the first two joints are prismatic (they represent an omnidirectional mobile base) and are followed by an arbitrary number of revolute joints. An admissible range can be specified for each joint variable; in particular, a fixed-base manipulator is specified by setting to zero the minimum and maximum values of the prismatic joint variables. In the present version, these parameters have been chosen so as to obtain a fixed-base 2R manipulator. You can change them to obtain different robots in the planar PPnR class.
+
+The obstacles may be line segments, circles or polygons. The user must also input the start and goal configurations and the PRM algorithm parameters, i.e., the maximum number of configurations in the roadmap, the maximum number of neighbors to which a new sample can be connected, and the maximum distance between neighbors. In the present version, all these data (obstacles, start, goal, algorithm parameters) have been chosen but you can change them (add/move the obstacles, etc).
+
+Note that the configuration space, visualized as a square, is correctly treated as a two-dimensional torus in the program. In
+particular, the configuration space distance is chosen so as to reflect the non-euclidean nature of this space.
