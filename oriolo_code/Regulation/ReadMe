@@ -1,0 +1,7 @@
+*****I am distributing these source files for your benefit, but I must ask that you do NOT redistribute them. In particular, do not post them on ftp or web sites, and in any case do not change the header with the credits.*****
+
+---------------------------------
+
+Enter the initialization parameters in init.m (simulation time, initial configuration of the unicycle, gains of the controller). The destination is the origin of the cartesian plane (for cartesian_reg) or of the configuration space (for posture_reg). A translation can always be performed in advance to place the destination at any desired point.
+
+Then open the desired .mdl, double-click the “initialization” block, run the simulation, then double-click the “plots” block
